@@ -1,0 +1,159 @@
+aliyun-oss:
+  endpoint: ""
+  access-key-id: ""
+  access-key-secret: ""
+  bucket-name: ""
+  bucket-url: ""
+  base-path: ""
+autocode:
+  transfer-restart: true
+  root: D:\job\vm_gongxiang\go\src\xhgroup\new\gin-vue-admin
+  server: /server
+  server-api: /api/v1/autocode
+  server-initialize: /initialize
+  server-model: /model/autocode
+  server-request: /model/autocode/request/
+  server-router: /router/autocode
+  server-service: /service/autocode
+  web: /web/src
+  web-api: /api
+  web-form: /view
+  web-table: /view
+  web-flow: /view
+captcha:
+  key-long: 6
+  img-width: 240
+  img-height: 80
+casbin:
+  #权限配置文件
+  model-path: ./resource/rbac_model.conf
+dingding:
+  #钉钉机器人推送URL
+  url:
+  sign:
+email:
+  to: xxx@qq.com
+  port: 465
+  from: xxx@163.com
+  host: smtp.163.com
+  is-ssl: true
+  secret: xxx
+  nickname: test
+excel:
+  #excel导出模板目录
+  dir: ./resource/excel/
+jwt:
+  signing-key: xhGroup
+  expires-time: 604800
+  buffer-time: 86400
+jzl-push-config:
+  #九枝兰的配置参数，只需要配置appid、appsecret
+  appid: ""
+  appsecret: ""
+  cid: ""
+  #这里都要配置，全都一致即可
+  douyin_column: conversion_01
+  kuaishou_column: conversion_01
+  web_column: conversion_01
+  easy_column: conversion_01
+local:
+  path: uploads/file
+#mysql配置文件，不需要修改
+mysql:
+  path:
+  config:
+  db-name:
+  username:
+  password:
+  max-idle-conns: 0
+  max-open-conns: 0
+  log-mode: ""
+  log-zap: false
+qiniu:
+  zone: ""
+  bucket: ""
+  img-path: ""
+  use-https: false
+  access-key: ""
+  secret-key: ""
+  use-cdn-domains: false
+#redis配置文件，如果默认配置不对，提前改好
+redis:
+  db: 0
+  addr: 127.0.0.1:6379
+  password: ""
+system:
+  env: public
+  #对外暴露的端口
+  addr: 315
+  db-type: mysql
+  oss-type: local
+  use-multipoint: true
+  #对外暴露的域名。例(最后不要带/)：https://xxx.xxx.com
+  proxy-url:
+tencent-cos:
+  bucket: ""
+  region: ""
+  secret-id: ""
+  secret-key: ""
+  base-url: ""
+  path-prefix: ""
+timer:
+  start: true
+  spec: "@daily"
+  detail:
+    - tableName: sys_operation_records
+      compareField: created_at
+      interval: 2160h
+  #定时任务-快手接口请求间隔，h为小时，m为分钟
+  kuaishou-spec: "@every 10h"
+  #定时任务-抖音接口请求间隔，h为小时，m为分钟
+  douyin-spec: "@every 10h"
+  #定时任务-基木鱼接口请求间隔，h为小时，m为分钟
+  jmy-spec: "@every 10h"
+  #定时任务-广点通接口请求间隔，h为小时，m为分钟
+  gdt-spec: "@every 10h"
+  #延迟推送
+  #定时任务执行间隔，建议1分钟执行一次
+  delayed-push-spec: "@every 1m"
+  #延迟推送的时间间隔，单位分钟，数字表示，系统默认最低为5，设置为0表示不进行延迟推送
+  delayed-push-time: 10
+  delayed-push-source: kst,easy,jmy,douyin,kuaishou,gdt,table,seo
+#3++配置参数，3++管理员账号在3++后台查看
+xh-push-config:
+  #院校自拟参数，必须填写
+  ip_key: ""
+  #3++后台查看
+  secret_key: ""
+  #3++后台查看
+  orgid: ""
+  org_code: ""
+  #3++推送参数，表示重复录入间隔时间，单位分钟
+  limit_time: 10
+  #网报是否开启禁止重复信息录入，参数（true/false）,true表示是
+  unique_data_start: true
+  #网报同渠道重复录入间隔时间
+  unique_data_number: 1
+  #网报同渠道重复录入间隔单位 d:天 m:月 y:年
+  unique_data_unit: m
+  # 是否进行全渠道去重，参数（true/false）,true表示是，false表示只去重当前所属渠道的
+  all-source-unique: false
+  #过滤字符串，用于接收媒体姓名字段时剔除3++无法识别的字符
+  filter_chars:
+    - '"'
+    - '.'
+    - '。'
+    - '!'
+    - '！'
+    - '：'
+    - ':'
+zap:
+  level: info
+  format: console
+  prefix: "[XH-GROUP]"
+  director: log
+  link-name: latest_log
+  showLine: false
+  encode-level: LowercaseColorLevelEncoder
+  stacktrace-key: stacktrace
+  log-in-console: true
