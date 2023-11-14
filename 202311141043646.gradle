@@ -1,0 +1,19 @@
+allprojects {
+        repositories { 
+                maven { url 'file:///D:/.jdk/maven-repository'} 
+                mavenLocal()
+                maven { name "Alibaba" ; url "https://maven.aliyun.com/nexus/content/groups/public/" } 
+                maven { name "Bstek" ; url "https://nexus.bsdn.org/content/groups/public/" } 
+                mavenCentral()
+                google()
+		jcenter()
+        }
+        buildscript {
+                repositories { 
+                    maven { name "Alibaba" ; url 'http://maven.aliyun.com/nexus/content/groups/public/' } 
+                    maven { name "Bstek" ; url 'https://nexus.bsdn.org/content/groups/public/' } 
+                    maven { name "M2" ; url 'https://plugins.gradle.org/m2/' }
+                }
+        }
+}
+
